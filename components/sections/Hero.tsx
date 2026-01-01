@@ -4,9 +4,12 @@ import { ArrowDown, Brain, Server } from "lucide-react";
 
 export default function Hero() {
   return (
+    // MAIN CONTAINER (Parent)
     <section className="relative h-screen w-full flex flex-col md:flex-row overflow-hidden bg-black text-white">
       
-      {/* LEFT SIDE: The Scientist */}
+      {/* =========================================
+          LEFT COLUMN: The Scientist
+      ========================================= */}
       <div className="w-full md:w-1/2 h-1/2 md:h-full bg-zinc-900 flex flex-col justify-center items-center md:items-end p-8 border-b md:border-b-0 md:border-r border-zinc-800">
         <motion.div 
           initial={{ x: -50, opacity: 0 }}
@@ -26,9 +29,13 @@ export default function Hero() {
             Analyzing complex datasets, building predictive models, and turning mathematical theory into intelligence.
           </p>
         </motion.div>
-      </div>
+      </div> 
+      {/* 👆 END OF LEFT COLUMN */}
 
-      {/* RIGHT SIDE: The Engineer */}
+
+      {/* =========================================
+          RIGHT COLUMN: The Engineer
+      ========================================= */}
       <div className="w-full md:w-1/2 h-1/2 md:h-full bg-black flex flex-col justify-center items-center md:items-start p-8 pb-20 md:pb-8">
         <motion.div 
           initial={{ x: 50, opacity: 0 }}
@@ -48,21 +55,27 @@ export default function Hero() {
             Deploying scalable agents, optimizing inference latency, and engineering robust MLOps pipelines.
           </p>
         </motion.div>
-      </div>
+      </div> 
+      {/* 👆 END OF RIGHT COLUMN */}
 
-      {/* CENTER CTA - DESKTOP ONLY */}
-      {/* Positioned absolutely in the center of the screen (X-axis) and near bottom (Y-axis) */}
+
+      {/* =========================================
+          CENTER BUTTON (Absolute Position)
+          This sits OUTSIDE both columns
+      ========================================= */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.8 }}
+        // "hidden md:flex" = Hides on mobile, shows on Desktop
+        // "left-1/2 -translate-x-1/2" = Dead Center Horizontal
         className="hidden md:flex absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10 flex-col items-center gap-2 text-zinc-400 hover:text-white transition-colors cursor-pointer group"
       >
         <a href="#projects" className="flex flex-col items-center gap-2">
-          <span className="text-sm font-medium tracking-widest uppercase bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">
+          <span className="text-sm font-medium tracking-widest uppercase bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10 shadow-lg">
             View Projects
           </span>
-          <div className="bg-black/50 p-3 rounded-full border border-white/10 group-hover:bg-white/10 transition-colors backdrop-blur-sm">
+          <div className="bg-black/50 p-3 rounded-full border border-white/10 group-hover:bg-white/10 transition-colors backdrop-blur-sm shadow-lg">
             <ArrowDown className="w-6 h-6 animate-bounce" />
           </div>
         </a>
