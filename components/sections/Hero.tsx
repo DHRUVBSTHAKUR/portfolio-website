@@ -29,7 +29,6 @@ export default function Hero() {
       </div>
 
       {/* RIGHT SIDE: The Engineer */}
-      {/* Added pb-20 for better mobile spacing */}
       <div className="w-full md:w-1/2 h-1/2 md:h-full bg-black flex flex-col justify-center items-center md:items-start p-8 pb-20 md:pb-8">
         <motion.div 
           initial={{ x: 50, opacity: 0 }}
@@ -51,8 +50,8 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* CENTER CTA - HIDDEN ON MOBILE */}
-      {/* 'hidden md:flex' removes this button entirely on phones */}
+      {/* CENTER CTA - DESKTOP ONLY */}
+      {/* Positioned absolutely in the center of the screen (X-axis) and near bottom (Y-axis) */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -60,8 +59,10 @@ export default function Hero() {
         className="hidden md:flex absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10 flex-col items-center gap-2 text-zinc-400 hover:text-white transition-colors cursor-pointer group"
       >
         <a href="#projects" className="flex flex-col items-center gap-2">
-          <span className="text-sm font-medium tracking-widest uppercase">View Projects</span>
-          <div className="bg-white/10 p-3 rounded-full group-hover:bg-white/20 transition-colors">
+          <span className="text-sm font-medium tracking-widest uppercase bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">
+            View Projects
+          </span>
+          <div className="bg-black/50 p-3 rounded-full border border-white/10 group-hover:bg-white/10 transition-colors backdrop-blur-sm">
             <ArrowDown className="w-6 h-6 animate-bounce" />
           </div>
         </a>
